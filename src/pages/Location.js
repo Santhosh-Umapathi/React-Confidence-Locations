@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 //API
 import { api } from "../api";
 //Constants
-import { ERROR_IGNORE_LIST, FILTER_FIELDS } from "../constants";
+import { ERROR_IGNORE_LIST } from "../constants";
 //Helpers
 import { ErrorToast } from "../helpers";
 //Recoil
@@ -18,7 +18,7 @@ const ArticleDetailSkeleton = lazy(() =>
   import("../components/page/ArticleDetailSkeleton")
 );
 
-const Blog = () => {
+const Location = () => {
   const {
     state: { darkMode, article },
     actions,
@@ -33,7 +33,6 @@ const Blog = () => {
     try {
       const results = await api({
         filterQuery: `_id:"${id}"`,
-        fields: FILTER_FIELDS + ",web_url",
       });
 
       actions.setArticle(results.response.docs[0]);
@@ -46,7 +45,7 @@ const Blog = () => {
   }, [id]);
 
   useEffect(() => {
-    getArticle();
+    // getArticle();
   }, [getArticle]);
 
   return (
@@ -56,10 +55,11 @@ const Blog = () => {
           <ArticleDetailSkeleton />
         </Suspense>
       ) : (
-        <ArticleDetailCard item={article} />
+        <></>
+        /* <ArticleDetailCard item={article} /> */
       )}
     </div>
   );
 };
 
-export default Blog;
+export default Location;

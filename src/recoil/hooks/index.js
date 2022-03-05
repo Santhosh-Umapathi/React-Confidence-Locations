@@ -10,7 +10,6 @@ export const useAtoms = () => {
   const [darkMode, updateDarkMode] = useRecoilState(atoms.darkMode);
   const [articles, updateArticles] = useRecoilState(atoms.articles);
   const [article, updateArticle] = useRecoilState(atoms.article);
-  const [searchText, updateSearchText] = useRecoilState(atoms.searchText);
 
   const toggleTheme = (payload) => {
     const root = window.document.documentElement;
@@ -29,16 +28,11 @@ export const useAtoms = () => {
     updateArticle(payload);
   };
 
-  const setSearchText = (payload) => {
-    updateSearchText(payload);
-  };
-
   //Atoms State
   const state = {
     darkMode,
     articles,
     article,
-    searchText,
   };
 
   //Atoms Actions
@@ -46,7 +40,6 @@ export const useAtoms = () => {
     toggleTheme,
     setArticles,
     setArticle,
-    setSearchText,
   };
 
   return { state, actions };

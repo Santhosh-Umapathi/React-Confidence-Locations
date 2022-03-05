@@ -11,7 +11,7 @@ import { Skeleton } from "./components";
 //Pages
 import { Home, Splash } from "./pages";
 //Page - Lazy Loading
-const Blog = lazy(() => import("./pages/Blog"));
+const Location = lazy(() => import("./pages/Location"));
 
 const App = () => (
   <RecoilRoot>
@@ -20,7 +20,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Splash />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/location" element={<Location />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </Suspense>

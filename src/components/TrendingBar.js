@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 //Constant
-import { TRENDING } from "../constants";
+
 //Recoil
 import { useAtoms } from "../recoil/hooks";
 
@@ -18,7 +18,7 @@ const TrendingBar = ({ setSearchText = () => {} }) => {
       }`}
     >
       <span className="font-semibold select-none">{t("trending")}: </span>
-      {TRENDING.map((item) => (
+      {/* {TRENDING.map((item) => (
         <span
           className="cursor-pointer hover:opacity-70 transition-opacity"
           onClick={() => setSearchText(null, item)}
@@ -26,7 +26,7 @@ const TrendingBar = ({ setSearchText = () => {} }) => {
         >
           #{item}
         </span>
-      ))}
+      ))} */}
     </div>
   );
 };

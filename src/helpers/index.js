@@ -1,4 +1,3 @@
-import { createElement } from "react";
 import { toast } from "react-toastify";
 
 export const getInitialTheme = () => {
@@ -11,15 +10,6 @@ export const getInitialTheme = () => {
 
   return false; // light theme as the default;
 };
-
-//Decode html entities from articles
-export const renderHTML = (escapedHTML) =>
-  createElement("div", {
-    dangerouslySetInnerHTML: { __html: escapedHTML },
-  });
-
-//Calculate read time of the article
-export const readTime = (word_count) => Math.ceil(+word_count / 225) + 1;
 
 //Error Toast
 export const ErrorToast = ({ message = "", darkMode = false }) =>

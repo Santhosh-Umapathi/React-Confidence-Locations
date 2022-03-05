@@ -13,7 +13,7 @@ import { TrendingBar } from "..";
 //Helpers
 import { ErrorToast } from "../../helpers";
 //Constants
-import { ERROR_IGNORE_LIST, FILTER_FIELDS } from "../../constants";
+import { ERROR_IGNORE_LIST } from "../../constants";
 
 const Searchbar = ({ setIsLoading = () => {}, page = 0 }) => {
   const {
@@ -31,7 +31,7 @@ const Searchbar = ({ setIsLoading = () => {}, page = 0 }) => {
         const results = await api({
           query,
           page,
-          fields: FILTER_FIELDS,
+
           cancelToken: ct?.token,
         });
 

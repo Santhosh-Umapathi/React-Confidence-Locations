@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //Logo
 import { Logo } from "../components";
-//Constants
-import { BASE_ROUTE } from "../constants";
 //Recoil
 import { useAtoms } from "../recoil/hooks";
 
@@ -16,7 +14,7 @@ const Splash = () => {
 
   // Show Splash Screen - On Initial load
   useEffect(() => {
-    setTimeout(() => navigate(BASE_ROUTE), 2000);
+    setTimeout(() => navigate("/home"), 2000);
   }, []);
 
   return (
@@ -26,12 +24,11 @@ const Splash = () => {
       } `}
     >
       <Logo
-        css={`animate-pulse w-[300px] md:w-[500px] ${
-          darkMode ? "fill-bgLight" : "fill-grey"
-        }`}
-        cssText={`text-lg text-xl animate-pulse ${
-          darkMode ? "text-bgLight" : "text-grey"
-        }`}
+        cssContainer="animate-pulse"
+        darkMode={darkMode}
+        cssText="text-4xl"
+        cssTextTwo={darkMode ? "text-white" : "text-black"}
+        css="w-14 h-24"
       />
     </div>
   );

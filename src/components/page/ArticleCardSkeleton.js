@@ -10,7 +10,7 @@ const ArticleCardSkeleton = () => {
   } = useAtoms();
   return (
     <div
-      className={`flex flex-col md:flex-row border-b p-2 md:p-5 md:space-x-5 space-y-1 md:space-y-0 ${
+      className={`flex flex-col bg-white shadow-md rounded-md md:flex-row border-b p-2 md:p-5 md:space-x-5 space-y-1 md:space-y-0 ${
         darkMode && "border-bgDark"
       }`}
     >

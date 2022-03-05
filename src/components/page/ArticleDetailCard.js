@@ -3,14 +3,12 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 //Components
 import { Skeleton } from "..";
-//Helpers
-import { readTime, renderHTML } from "../../helpers";
+
 //Icon
 import { LeftArrow } from "../icons";
 //Recoil
 import { useAtoms } from "../../recoil/hooks";
 //Constants
-import { IMAGE_SOURCE } from "../../constants";
 
 const ArticleDetailCard = ({ item = {} }) => {
   const {
@@ -36,13 +34,13 @@ const ArticleDetailCard = ({ item = {} }) => {
   return (
     <div className="flex flex-col mx-2 md:px-5 space-y-3 md:space-y-5 w-full relative">
       <LeftArrow onClick={() => navigate(-1)} />
-      {imageUrl && (
+      {/* {imageUrl && (
         <img
           src={IMAGE_SOURCE + imageUrl}
           className="rounded-md object-cover w-full h-[200px] md:h-[300px] "
           onLoad={() => setImageLoaded(true)}
         />
-      )}
+      )} */}
       {!imageLoaded && imageUrl && (
         <Skeleton
           css="flex w-full h-[200px] md:h-[300px] rounded-md absolute top-8 right-0 md:px-5"
@@ -63,13 +61,11 @@ const ArticleDetailCard = ({ item = {} }) => {
             {t("publisher")}
             {source}
           </span>
-          <span>
-            {readTime(word_count)} {t("read")}
-          </span>
+          <span>{/* {readTime(word_count)} {t("read")} */}</span>
           <span>{new Date(pub_date).toDateString()}</span>
         </div>
         <span className="text-md md:text-xl mb-2 md:mb-5">
-          {renderHTML(snippet)}
+          {/* {renderHTML(snippet)} */}
         </span>
         <div className="flex select-none">
           <a
