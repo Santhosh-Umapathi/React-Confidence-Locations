@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "svgr": "npx @svgr/cli --out-dir src/components/icons --ignore-existing -- src/assets/icons",
+    "svgr": "npx @svgr/cli --out-dir src/components/icons --ignore-existing -- src/assets/images",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

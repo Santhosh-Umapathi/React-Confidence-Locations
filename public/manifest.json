@@ -1,6 +1,6 @@
 {
-  "short_name": "nytimes-revamped",
-  "name": "nytimes-revamped",
+  "short_name": "confidence-locations",
+  "name": "confidence-locations",
   "icons": [
     {
       "src": "favicon.ico",

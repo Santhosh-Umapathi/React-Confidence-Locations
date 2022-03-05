@@ -1,6 +1,6 @@
 {
-  "name": "nytimes-revamped",
-  "short_name": "NYTR",
+  "name": "confidence-locations",
+  "short_name": "CL",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
