@@ -3,8 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 //API
 import { api } from "../api";
-//Constants
-import { ERROR_IGNORE_LIST } from "../constants";
+
 //Helpers
 import { ErrorToast } from "../helpers";
 //Recoil
@@ -37,8 +36,7 @@ const Location = () => {
 
       actions.setArticle(results.response.docs[0]);
     } catch (error) {
-      !ERROR_IGNORE_LIST.includes(error.message) &&
-        ErrorToast({ message: t("error"), darkMode });
+      ErrorToast({ message: t("error"), darkMode });
     } finally {
       setTimeout(() => setIsLoading(false), 1000);
     }

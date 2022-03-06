@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 //Components
 import { Logo, Language, ThemeBulb } from "../components";
 //Constants
-import { BASE_ROUTE } from "../constants";
+
 import { useAtoms } from "../recoil/hooks";
 
 const Navbar = () => {

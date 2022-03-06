@@ -4,7 +4,7 @@ import { USERNAME, BASE_URL } from "../constants";
 
 export const api = async ({ start = 0, limit = 10 }) => {
   try {
-    const response = await axios.post(
+    const { data } = await axios.post(
       BASE_URL,
       { start, limit },
       {
@@ -14,7 +14,7 @@ export const api = async ({ start = 0, limit = 10 }) => {
       }
     );
 
-    return response.data;
+    return data;
   } catch (error) {
     throw error;
   }
