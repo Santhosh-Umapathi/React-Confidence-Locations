@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 //Navigation
 import { BrowserRouter } from "react-router-dom";
+
 //CSS
 import "./index.css";
 import "react-perfect-scrollbar/dist/css/styles.css";

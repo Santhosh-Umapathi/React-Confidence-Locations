@@ -1,14 +1,11 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-//Components
-import { Skeleton } from "..";
 
 //Icon
 import { LeftArrow } from "../icons";
 //Recoil
 import { useAtoms } from "../../recoil/hooks";
-//Constants
 
 const ArticleDetailCard = ({ item = {} }) => {
   const {
@@ -17,64 +14,47 @@ const ArticleDetailCard = ({ item = {} }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const [imageLoaded, setImageLoaded] = useState(false);
-
   //Destructing item
   const {
-    headline,
-    snippet,
-    source,
-    word_count,
-    pub_date,
-    multimedia,
-    web_url,
+    id,
+    locationType,
+    address,
+    locationDetails,
+    locationUserRole,
+    locationName,
+    numberofDevices,
+    subscriptionActive,
+    newLocation,
   } = item;
-  const imageUrl = multimedia[9]?.url;
 
   return (
-    <div className="flex flex-col mx-2 md:px-5 space-y-3 md:space-y-5 w-full relative">
+    <div className="flex flex-col mx-2 md:px-5 space-y-3 md:space-y-5 w-full relative ">
       <LeftArrow onClick={() => navigate(-1)} />
-      {/* {imageUrl && (
-        <img
-          src={IMAGE_SOURCE + imageUrl}
-          className="rounded-md object-cover w-full h-[200px] md:h-[300px] "
-          onLoad={() => setImageLoaded(true)}
-        />
-      )} */}
-      {!imageLoaded && imageUrl && (
-        <Skeleton
-          css="flex w-full h-[200px] md:h-[300px] rounded-md absolute top-8 right-0 md:px-5"
-          baseColor="#24292F"
-          highlightColor="#0D1116"
-        />
-      )}
+
       <div
-        className={`flex flex-col w-full ${
-          darkMode ? "text-bgLight" : "text-grey"
+        className={`flex flex-col w-full  rounded-md shadow-md p-5 ${
+          darkMode ? "text-bgLight bg-primary" : "text-grey bg-white"
         }`}
       >
-        <span className="text-2xl md:text-4xl font-bold mb-3">
-          {headline.main}
+        <span className="text-2xl md:text-5xl font-bold mb-3">
+          {locationName}
         </span>
-        <div className="flex space-x-5 md:space-x-40 mb-4 md:mb-8 font-thin text-xs md:text-base">
-          <span>
-            {t("publisher")}
-            {source}
-          </span>
-          <span>{/* {readTime(word_count)} {t("read")} */}</span>
-          <span>{new Date(pub_date).toDateString()}</span>
+
+        <div className="flex flex-col space-y-1 font-thin text-xs md:text-lg ">
+          <span>Role: {locationUserRole}</span>
+          <span>Type: {locationType}</span>
+          {locationDetails && <span>Details: {locationDetails}</span>}
+          <span>No.of Devices: {numberofDevices}</span>
+          <span>Subscription Active: {subscriptionActive ? "Yes" : "No"}</span>
+          {<span>New Location: {newLocation ? "Yes" : "No"}</span>}
         </div>
-        <span className="text-md md:text-xl mb-2 md:mb-5">
-          {/* {renderHTML(snippet)} */}
-        </span>
-        <div className="flex select-none">
-          <a
-            href={web_url}
-            target="_blank"
-            className="underline tracking-wide text-orange-600 hover:opacity-70 transition-opacity text-sm md:text-base"
-          >
-            {t("readMore")}
-          </a>
+        <hr className=" my-3 border-b" />
+
+        <div className="flex flex-col text-lg">
+          <span>{address.addressLine1}</span>
+          <span>{address.city}</span>
+          <span>{address.state}</span>
+          <span>{address.zip}</span>
         </div>
       </div>
     </div>

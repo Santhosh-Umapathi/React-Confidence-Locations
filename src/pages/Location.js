@@ -19,32 +19,30 @@ const ArticleDetailSkeleton = lazy(() =>
 
 const Location = () => {
   const {
-    state: { darkMode, article },
-    actions,
+    state: { articles },
   } = useAtoms();
-  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
+  //Local State
   const [isLoading, setIsLoading] = useState(true);
-
+  const [location, setLocation] = useState();
+  console.log("🚀 --- Location --- location", location);
+  //ID from query
   const id = searchParams.get("id");
 
-  const getArticle = useCallback(async () => {
-    try {
-      const results = await api({
-        filterQuery: `_id:"${id}"`,
-      });
-
-      actions.setArticle(results.response.docs[0]);
-    } catch (error) {
-      ErrorToast({ message: t("error"), darkMode });
-    } finally {
-      setTimeout(() => setIsLoading(false), 1000);
-    }
+  //Find the location
+  const findLocation = useCallback(() => {
+    setIsLoading(true);
+    const item = articles.find((i) => String(i.id) === id);
+    setLocation(item);
   }, [id]);
 
   useEffect(() => {
-    // getArticle();
-  }, [getArticle]);
+    findLocation();
+  }, [findLocation]);
+
+  useEffect(() => {
+    location && setTimeout(() => setIsLoading(false), 1000);
+  }, [location]);
 
   return (
     <div className={`flex w-full`}>
@@ -53,8 +51,7 @@ const Location = () => {
           <ArticleDetailSkeleton />
         </Suspense>
       ) : (
-        <></>
-        /* <ArticleDetailCard item={article} /> */
+        <ArticleDetailCard item={location} />
       )}
     </div>
   );

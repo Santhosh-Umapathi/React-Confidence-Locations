@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
-import { useSearchParams } from "react-router-dom";
 import PerfectScrollbar from "react-perfect-scrollbar";
 //API
 import { api } from "../api";
@@ -24,18 +23,21 @@ const Home = () => {
     actions,
   } = useAtoms();
   console.log("🚀 --- Home --- articles", articles);
+
   const { t } = useTranslation();
 
   const [isLoading, setIsLoading] = useState(true);
+  const [start, setStart] = useState(0);
+  const [limit, setLimit] = useState(3);
 
   //Network request to get articles
   const getArticles = useCallback(async () => {
     setIsLoading(true);
     try {
-      const results = await api({});
-      console.log("🚀 --- getArticles --- results", results.data);
+      const results = await api({ start, limit });
+      // console.log("🚀 --- getArticles --- results", results);
 
-      actions.setArticles(results.locations);
+      actions.setArticles([...articles, ...results.locations]);
     } catch (error) {
       ErrorToast({ message: t("error"), darkMode });
     } finally {
@@ -45,18 +47,14 @@ const Home = () => {
 
   useEffect(() => {
     getArticles();
+
+    return () => actions.setArticles([]);
   }, [getArticles]);
 
   return (
     <div className="flex flex-col items-center w-full h-full space-y-10 md:space-y-10 mx-2 md:mx-0">
       <div className="flex flex-col w-full md:px-20 space-y-5 md:space-y-3 ">
-        {/* <PerfectScrollbar
-          className={`rounded-md shadow-md ${
-            darkMode ? "bg-primary" : "bg-white"
-          }`}
-        > */}
-
-        {isLoading ? (
+        {isLoading && !articles.length > 0 ? (
           <>
             {Array(3)
               .fill("")
@@ -69,17 +67,15 @@ const Home = () => {
                 </Suspense>
               ))}
           </>
-        ) : !articles.length > 0 ? (
+        ) : !isLoading && !articles.length > 0 ? (
           <span
             className={`p-5 text-xl ${darkMode ? "text-bgLight" : "text-grey"}`}
           >
             {t("notFound")}
           </span>
         ) : (
-          articles.map((item) => <ArticleCard item={item} key={item._id} />)
+          articles.map((item) => <ArticleCard item={item} key={item.id} />)
         )}
-
-        {/* </PerfectScrollbar> */}
       </div>
     </div>
   );
