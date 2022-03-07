@@ -7,7 +7,7 @@ import { getInitialTheme } from "../../helpers";
 //------------------------------------------------------------------
 export const darkMode = atom({
   key: "darkMode",
-  default: getInitialTheme(),
+  default: getInitialTheme,
 });
 
 export const locations = atom({
