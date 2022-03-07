@@ -22,7 +22,6 @@ const Home = () => {
     state: { darkMode, articles },
     actions,
   } = useAtoms();
-  console.log("🚀 --- Home --- articles", articles);
 
   const { t } = useTranslation();
 
@@ -35,20 +34,17 @@ const Home = () => {
     setIsLoading(true);
     try {
       const results = await api({ start, limit });
-      // console.log("🚀 --- getArticles --- results", results);
 
-      actions.setArticles([...articles, ...results.locations]);
+      actions.setArticles(results.locations);
     } catch (error) {
       ErrorToast({ message: t("error"), darkMode });
     } finally {
       setTimeout(() => setIsLoading(false), 1000);
     }
-  }, []);
+  }, [start, limit]);
 
   useEffect(() => {
     getArticles();
-
-    return () => actions.setArticles([]);
   }, [getArticles]);
 
   return (

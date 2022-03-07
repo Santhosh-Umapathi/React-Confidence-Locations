@@ -32,7 +32,7 @@ const ArticleDetailCard = ({ item = {} }) => {
       <LeftArrow onClick={() => navigate(-1)} />
 
       <div
-        className={`flex flex-col w-full  rounded-md shadow-md p-5 ${
+        className={`flex flex-col w-full rounded-md shadow-md p-5 ${
           darkMode ? "text-bgLight bg-primary" : "text-grey bg-white"
         }`}
       >
