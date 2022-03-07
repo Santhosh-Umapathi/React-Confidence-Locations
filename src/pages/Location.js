@@ -1,13 +1,7 @@
 import { useState, useEffect, useCallback, lazy, Suspense } from "react";
-import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-//API
-import { api } from "../api";
-
-//Helpers
-import { ErrorToast } from "../helpers";
 //Recoil
 import { useAtoms } from "../recoil/hooks";
 //Components
@@ -21,7 +15,7 @@ const ArticleDetailSkeleton = lazy(() =>
 
 const Location = () => {
   const {
-    state: { articles },
+    state: { locations },
     actions,
   } = useAtoms();
   const [searchParams] = useSearchParams();
@@ -37,7 +31,7 @@ const Location = () => {
   //Find the location
   const findLocation = useCallback(() => {
     setIsLoading(true);
-    const item = articles.find((i) => String(i.id) === id);
+    const item = locations.find((i) => String(i.id) === id);
     //Id was altered or not found
     if (!item) navigate(-1);
 

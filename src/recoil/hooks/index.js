@@ -8,8 +8,7 @@ import * as atoms from "../atoms";
 
 export const useAtoms = () => {
   const [darkMode, updateDarkMode] = useRecoilState(atoms.darkMode);
-  const [articles, updateArticles] = useRecoilState(atoms.articles);
-  const [article, updateArticle] = useRecoilState(atoms.article);
+  const [locations, updateLocations] = useRecoilState(atoms.locations);
 
   const toggleTheme = (payload) => {
     const root = window.document.documentElement;
@@ -21,25 +20,19 @@ export const useAtoms = () => {
   };
 
   const setArticles = (payload) => {
-    updateArticles(payload);
-  };
-
-  const setArticle = (payload) => {
-    updateArticle(payload);
+    updateLocations(payload);
   };
 
   //Atoms State
   const state = {
     darkMode,
-    articles,
-    article,
+    locations,
   };
 
   //Atoms Actions
   const actions = {
     toggleTheme,
     setArticles,
-    setArticle,
   };
 
   return { state, actions };

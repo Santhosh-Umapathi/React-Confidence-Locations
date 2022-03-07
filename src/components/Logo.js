@@ -1,5 +1,7 @@
 import { memo } from "react";
+//Icon
 import { Icon } from "./icons";
+
 const Logo = ({
   css = "",
   cssText = "",

@@ -16,7 +16,6 @@ const ArticleDetailCard = ({ item = {} }) => {
 
   //Destructing item
   const {
-    id,
     locationType,
     address,
     locationDetails,

@@ -10,12 +10,7 @@ export const darkMode = atom({
   default: getInitialTheme(),
 });
 
-export const articles = atom({
-  key: "articles",
+export const locations = atom({
+  key: "locations",
   default: [],
-});
-
-export const article = atom({
-  key: "article",
-  default: null,
 });

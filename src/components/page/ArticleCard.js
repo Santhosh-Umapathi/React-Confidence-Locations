@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 //Recoil
 import { useAtoms } from "../../recoil/hooks";
 
-const ArticleCard = ({ item = {}, isLoading = true }) => {
+const ArticleCard = ({ item = {} }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 

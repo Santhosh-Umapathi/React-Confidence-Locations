@@ -19,7 +19,7 @@ const ArticleCardSkeleton = lazy(() =>
 
 const Home = () => {
   const {
-    state: { darkMode, articles },
+    state: { darkMode, locations },
     actions,
   } = useAtoms();
 
@@ -32,14 +32,14 @@ const Home = () => {
   const [lastElement, setLastElement] = useState(null);
   const [isReady, setIsReady] = useState(false);
 
-  //Network request to get articles
+  //Network request to get locations
   const getArticles = useCallback(async () => {
     setIsLoading(true);
     try {
       const results = await api({ start, limit });
       setTotal(results.numberOfLocations);
 
-      actions.setArticles([...articles, ...results.locations]);
+      actions.setArticles([...locations, ...results.locations]);
     } catch (error) {
       ErrorToast({ message: t("error"), darkMode });
     } finally {
@@ -55,7 +55,7 @@ const Home = () => {
     const observer = new IntersectionObserver((entries) => {
       const first = entries[0];
       if (first.isIntersecting) {
-        !isLoading && total >= articles.length && setStart((no) => no + limit);
+        !isLoading && total >= locations.length && setStart((no) => no + limit);
       }
     });
 
@@ -74,7 +74,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center w-full h-full space-y-10 md:space-y-10 mx-2 md:mx-0">
       <div className="flex flex-col w-full md:px-20 space-y-3 ">
-        {isLoading && !articles.length > 0 ? (
+        {isLoading && !locations.length > 0 ? (
           <>
             {Array(3)
               .fill("")
@@ -87,15 +87,15 @@ const Home = () => {
                 </Suspense>
               ))}
           </>
-        ) : !isLoading && !articles.length > 0 ? (
+        ) : !isLoading && !locations.length > 0 ? (
           <span
             className={`p-5 text-xl ${darkMode ? "text-bgLight" : "text-grey"}`}
           >
             {t("notFound")}
           </span>
         ) : (
-          articles.map((item) => {
-            const isLastElement = total === articles.length;
+          locations.map((item) => {
+            const isLastElement = total === locations.length;
 
             return !isLastElement ? (
               <>
@@ -109,7 +109,7 @@ const Home = () => {
         )}
       </div>
 
-      {total === articles.length && (
+      {total === locations.length && (
         <span className="text-xl">End Of Locations</span>
       )}
 

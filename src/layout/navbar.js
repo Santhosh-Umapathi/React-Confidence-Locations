@@ -11,8 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const {
-    state: { darkMode, articles },
-    actions,
+    state: { darkMode },
   } = useAtoms();
 
   return (
