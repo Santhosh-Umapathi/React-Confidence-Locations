@@ -73,7 +73,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center w-full h-full space-y-10 md:space-y-10 mx-2 md:mx-0">
-      <div className="flex flex-col w-full md:px-20 space-y-5 md:space-y-3 ">
+      <div className="flex flex-col w-full md:px-20 space-y-3 ">
         {isLoading && !articles.length > 0 ? (
           <>
             {Array(3)
@@ -100,7 +100,7 @@ const Home = () => {
             return !isLastElement ? (
               <>
                 <ArticleCard item={item} key={item.id} />
-                <div ref={setLastElement} className="mt-20" />
+                <div ref={setLastElement} className="flex mt-20" />
               </>
             ) : (
               <ArticleCard item={item} key={item.id} />

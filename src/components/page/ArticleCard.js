@@ -25,7 +25,7 @@ const ArticleCard = ({ item = {}, isLoading = true }) => {
 
   return (
     <div
-      className={`flex flex-col md:flex-row border-b p-2 md:p-5 md:space-x-5 hover:opacity-60 transition-opacity cursor-pointer relative rounded-md shadow-md ${
+      className={`flex flex-col md:flex-row border-b p-5 md:space-x-5 hover:opacity-60 transition-opacity cursor-pointer relative rounded-md shadow-md ${
         darkMode
           ? "bg-primary border-bgDark text-bgLight"
           : "bg-white text-grey"

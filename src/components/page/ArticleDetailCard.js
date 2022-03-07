@@ -40,7 +40,7 @@ const ArticleDetailCard = ({ item = {} }) => {
           {locationName}
         </span>
 
-        <div className="flex flex-col space-y-1 font-thin text-xs md:text-lg ">
+        <div className="flex flex-col space-y-1 font-thin text-sm md:text-lg ">
           <span>
             {t("role")}
             {locationUserRole}
@@ -72,7 +72,7 @@ const ArticleDetailCard = ({ item = {} }) => {
         </div>
         <hr className=" my-3 border-b" />
 
-        <div className="flex flex-col text-lg">
+        <div className="flex flex-col text-sm sm:text-lg">
           <span>{address.addressLine1}</span>
           <span>{address.city}</span>
           <span>{address.state}</span>

@@ -19,16 +19,16 @@ const Splash = () => {
 
   return (
     <div
-      className={`flex justify-center items-center w-screen h-screen ${
+      className={`flex justify-center items-center w-full h-screen ${
         darkMode ? "bg-bgDark" : "bg-bgLight"
       } `}
     >
       <Logo
         cssContainer="animate-pulse"
         darkMode={darkMode}
-        cssText="text-4xl"
+        cssText="text-2xl sm:text-4xl"
         cssTextTwo={darkMode ? "text-white" : "text-black"}
-        css="w-14 h-24"
+        css="w-10 h-20 sm:w-14 sm:h-24"
       />
     </div>
   );
