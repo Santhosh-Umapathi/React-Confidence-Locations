@@ -49,8 +49,8 @@ const Location = () => {
     if (!id || id === "") return navigate("/home");
 
     findLocation();
-
-    return () => actions.setArticles([]);
+    //Clearing Data
+    actions.setArticles([]);
   }, [findLocation]);
 
   useEffect(() => {
