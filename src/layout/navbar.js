@@ -23,8 +23,8 @@ const Navbar = () => {
     >
       <Logo
         darkMode={darkMode}
-        css="w-8 h-12 z-50"
-        cssText="text-xl"
+        css="w-6 h-8 sm:w-8 sm:h-12 z-50"
+        cssText="text-lg sm:text-xl w-52 sm:w-full"
         cssTextTwo="text-white"
         cssContainer="cursor-pointer hover:opacity-70 transition-opacity"
         onClick={() => navigate("/home")}

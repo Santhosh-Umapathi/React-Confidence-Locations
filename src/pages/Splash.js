@@ -26,7 +26,7 @@ const Splash = () => {
       <Logo
         cssContainer="animate-pulse"
         darkMode={darkMode}
-        cssText="text-2xl sm:text-4xl"
+        cssText="text-2xl sm:text-4xl w-64 sm:w-full"
         cssTextTwo={darkMode ? "text-white" : "text-black"}
         css="w-10 h-20 sm:w-14 sm:h-24"
       />

@@ -10,7 +10,7 @@ const Logo = ({
   cssTextTwo = "",
 }) => (
   <div
-    className={`${cssContainer} flex justify-center items-center space-x-2`}
+    className={`${cssContainer} flex justify-center items-center sm:space-x-2`}
     onClick={onClick}
   >
     <Icon
@@ -20,7 +20,7 @@ const Logo = ({
     />
 
     <span
-      className={`${cssText} text-brandRed select-none tracking-wider w-64 sm:w-full text-center`}
+      className={`${cssText} text-brandRed select-none tracking-wider text-center`}
     >
       Confidence <span className={`${cssTextTwo}`}>Locations</span>
     </span>
