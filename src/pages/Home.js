@@ -68,7 +68,7 @@ const Home = () => {
   //Resetting scroll position
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsReady(true);
+    setTimeout(() => setIsReady(true), 500);
   }, [isReady]);
 
   return (
