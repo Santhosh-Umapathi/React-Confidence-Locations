@@ -43,7 +43,6 @@ yarn install && yarn start
 
 - [Recoil](https://recoiljs.org/) - State Management
 - [react-toastify](https://github.com/fkhadra/react-toastify#readme) - Toast Notifications
-- [react-perfect-scrollbar](https://github.com/goldenyz/react-perfect-scrollbar) - Scroll bar
 - [react-loading-skeleton](https://github.com/dvtng/react-loading-skeleton#readme) - Skeleton Placeholder
 - [react-i18next](https://react.i18next.com/) - Internationalization
 - [axios](https://axios-http.com/) - Network Requests
