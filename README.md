@@ -24,7 +24,7 @@ yarn install && yarn start
 
 ## Running the Project
 
-- Create a **.env.local** file. Copy the variable from **.env.example** file
+- Create a **.env** file. Copy the variables from **.env.example** file
 - Add the Required Authentication fields
 - Install the required dependencies using yarn install and run yarn start
 
