@@ -74,7 +74,7 @@ yarn install && yarn start
 
 ## Github Source
 
-[Git Repository](https://github.com/Santhosh-Umapathi/NYTimes-Revamped)
+[Git Repository](https://github.com/Santhosh-Umapathi/React-Confidence-Locations)
 
 ## License
 
