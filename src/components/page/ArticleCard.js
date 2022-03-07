@@ -1,11 +1,13 @@
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 //Recoil
 import { useAtoms } from "../../recoil/hooks";
 
 const ArticleCard = ({ item = {}, isLoading = true }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const {
     state: { darkMode },
@@ -34,9 +36,20 @@ const ArticleCard = ({ item = {}, isLoading = true }) => {
         <span className="text-xl md:text-3xl font-bold">{locationName}</span>
 
         <div className="flex space-x-5 md:space-x-10 text-sm md:text-md font-thin">
-          <span>Role: {locationUserRole}</span>
-          <span>Type: {locationType}</span>
-          {locationDetails && <span>Details: {locationDetails}</span>}
+          <span>
+            {t("role")}
+            {locationUserRole}
+          </span>
+          <span>
+            {t("type")}
+            {locationType}
+          </span>
+          {locationDetails && (
+            <span>
+              {t("details")}
+              {locationDetails}
+            </span>
+          )}
         </div>
         <div className="flex flex-col text-md">
           <span>{address.addressLine1}</span>

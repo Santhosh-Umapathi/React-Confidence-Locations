@@ -41,12 +41,34 @@ const ArticleDetailCard = ({ item = {} }) => {
         </span>
 
         <div className="flex flex-col space-y-1 font-thin text-xs md:text-lg ">
-          <span>Role: {locationUserRole}</span>
-          <span>Type: {locationType}</span>
-          {locationDetails && <span>Details: {locationDetails}</span>}
-          <span>No.of Devices: {numberofDevices}</span>
-          <span>Subscription Active: {subscriptionActive ? "Yes" : "No"}</span>
-          {<span>New Location: {newLocation ? "Yes" : "No"}</span>}
+          <span>
+            {t("role")}
+            {locationUserRole}
+          </span>
+          <span>
+            {t("type")}
+            {locationType}
+          </span>
+          {locationDetails && (
+            <span>
+              {t("details")}
+              {locationDetails}
+            </span>
+          )}
+          <span>
+            {t("devices")}
+            {numberofDevices}
+          </span>
+          <span>
+            {t("subscription")}
+            {subscriptionActive ? "Yes" : "No"}
+          </span>
+          {
+            <span>
+              {t("location")}
+              {newLocation ? "Yes" : "No"}
+            </span>
+          }
         </div>
         <hr className=" my-3 border-b" />
 
