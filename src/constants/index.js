@@ -1,6 +1,6 @@
 //API
 export const BASE_URL =
-  "https://dev-api.confidence.org/v2/confidence/locations";
+  "https://cors-anywhere.herokuapp.com/https://dev-api.confidence.org/v2/confidence/locations";
 export const USERNAME = process.env.REACT_APP_USERNAME;
 
 //Profiles
