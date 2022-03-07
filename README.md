@@ -1,4 +1,4 @@
-![image](https://raw.githubusercontent.com/Santhosh-Umapathi/React-NYTimes-Revamped/project-assets/src/assets/images/cover.png)
+![image](https://raw.githubusercontent.com/Santhosh-Umapathi/React-Confidence-Locations/project_assets/images/logo.png)
 
 _Confidence Locations, a project made with React & Tailwind CSS_
 
@@ -68,9 +68,9 @@ yarn install && yarn start
 
 ## Project Screenshots
 
-- [Mobile](https://raw.githubusercontent.com/Santhosh-Umapathi/React-NYTimes-Revamped/project-assets/src/assets/images/screenshots/Mobile.png)
-- [Tablet](https://raw.githubusercontent.com/Santhosh-Umapathi/React-NYTimes-Revamped/project-assets/src/assets/images/screenshots/Tablet.png)
-- [Desktop](https://raw.githubusercontent.com/Santhosh-Umapathi/React-NYTimes-Revamped/project-assets/src/assets/images/screenshots/Desktop.png)
+- [Mobile](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Mobile)
+- [Tablet](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Tablet)
+- [Desktop](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Desktop)
 
 ## Github Source
 
