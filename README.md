@@ -70,6 +70,7 @@ yarn install && yarn start
 - [Mobile](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Mobile)
 - [Tablet](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Tablet)
 - [Desktop](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Desktop)
+- [Tests](https://github.com/Santhosh-Umapathi/React-Confidence-Locations/tree/project_assets/images/Screenshots/Tests)
 
 ## Github Source
 
