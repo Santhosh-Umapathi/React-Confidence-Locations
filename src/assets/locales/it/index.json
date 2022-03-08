@@ -6,5 +6,7 @@
   "details": "Dettagli: ",
   "devices": "Numero di dispositivi: ",
   "subscription": "Abbonamento attivo: ",
-  "location": "Nuova sede: "
+  "location": "Nuova sede: ",
+  "request": "Richiesta di accesso",
+  "requestText": "Richiedi l'accesso temporaneo al server demo"
 }

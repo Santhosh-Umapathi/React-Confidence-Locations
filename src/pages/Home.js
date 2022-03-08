@@ -88,11 +88,25 @@ const Home = () => {
               ))}
           </>
         ) : !isLoading && !locations.length > 0 ? (
-          <span
-            className={`p-5 text-xl ${darkMode ? "text-bgLight" : "text-grey"}`}
-          >
-            {t("notFound")}
-          </span>
+          <div className="flex flex-col space-y-4 p-5">
+            <span
+              className={`text-xl ${darkMode ? "text-bgLight" : "text-grey"}`}
+            >
+              {t("notFound")}
+            </span>
+            <span className={`${darkMode ? "text-white" : "text-black"}`}>
+              {t("requestText")}
+            </span>
+            <button
+              className="flex p-2 bg-brandRed rounded-md text-white w-40 text-center justify-center items-center"
+              onClick={
+                () =>
+                  window.open("https://cors-anywhere.herokuapp.com/corsdemo") //Access to demo server for CORS
+              }
+            >
+              {t("request")}
+            </button>
+          </div>
         ) : (
           locations.map((item) => {
             const isLastElement = total === locations.length;

@@ -20,6 +20,8 @@ yarn install && yarn start
 
 ## Live Demo
 
+- Open [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access to demo server
+
 [Confidence Locations](https://confidence-locations.web.app/)
 
 ## Running the Project
@@ -27,6 +29,7 @@ yarn install && yarn start
 - Create a **.env** file. Copy the variables from **.env.example** file
 - Add the Required Authentication fields
 - Install the required dependencies using yarn install and run yarn start
+- Open [CORS Anywhere](https://cors-anywhere.herokuapp.com/corsdemo) and request temporary access to demo server
 
 ## Project Features
 

@@ -6,5 +6,7 @@
   "details": "Details: ",
   "devices": "No.of Devices: ",
   "subscription": "Subscription Active: ",
-  "location": "New Location: "
+  "location": "New Location: ",
+  "request": "Request Access",
+  "requestText": "Request Temporary Access to Demo Server"
 }
